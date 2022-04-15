@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Deslizador de Imagem / Pagina Responsiva</title>
+</head>
+<body>
+    <section>
+        <div class="bg">
+
+        </div>
+        <header>
+            <a href="#" class="logo">Frutas</a>
+            <ul class="navigation">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">As Novas</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Coma fresco hoje mesmo!</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aut consectetur nisi at harum, maxime impedit dolores ducimus earum deserunt voluptatibus placeat eum perferendis reprehenderit quia omnis inventore! Laudantium, deleniti?</p>
+                <a href="#">Leia mais</a>
+            </div>
+            <div class="imgBox">
+                <img src="./img/apple.png" alt="Maça ilustrando o background do site">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li data-text="Apple" class="active"><img src="./img/apple.png" alt="Maça em um quadro menor"></li>
+            <li data-text="Mango"><img src="./img/mango.png" alt="Manga em um quadro menor"></li>
+            <li data-text="Watermelon"><img src="./img/watermelon.png" alt="Melancia em um quadro menor"></li>
+            <li data-text="Dragon Fruits"><img src="./img/dragonFruits.png" alt="Pitaya em um quadro menor"></li>
+            <li data-text="Pineapple"><img src="./img/pineApple.png" alt="Maça em um quadro menor"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><img src="./img/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="./img/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="./img/instagram.png" alt=""></a></li>
+        </ul>
+    </section>
+
+    <script>
+        // adicionar a ativação da class thumb
+        let el = document.querySelectorAll('.thumb li');
+        for (let i = 0; i < el.length; i++){
+            el[i].onclick = function(){
+                var c = 0;
+                while(c < el.length){
+                    el[c++].className = 'check';
+                }
+                el[i].className = 'check active';
+            }
+        }
+    </script>
+</body>
+</html>
