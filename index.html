@@ -16,6 +16,7 @@
         </div>
         <header>
             <a href="#" class="logo">Frutas</a>
+            <div class="toggle"></div>
             <ul class="navigation">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Menu</a></li>
@@ -30,15 +31,15 @@
                 <a href="#">Leia mais</a>
             </div>
             <div class="imgBox">
-                <img src="./img/apple.png" alt="Maça ilustrando o background do site">
+                <img src="./img/apple.png" class="fruits" alt="Maça ilustrando o background do site">
             </div>
         </div>
         <ul class="thumb">
-            <li data-text="Apple" class="active"><img src="./img/apple.png" alt="Maça em um quadro menor"></li>
-            <li data-text="Mango"><img src="./img/mango.png" alt="Manga em um quadro menor"></li>
-            <li data-text="Watermelon"><img src="./img/watermelon.png" alt="Melancia em um quadro menor"></li>
-            <li data-text="Dragon Fruits"><img src="./img/dragonFruits.png" alt="Pitaya em um quadro menor"></li>
-            <li data-text="Pineapple"><img src="./img/pineApple.png" alt="Maça em um quadro menor"></li>
+            <li data-text="Maça" class="active"><img src="./img/apple.png" onclick="imgSlider('./img/apple.png');changeBgColor('#fc4a55')" alt="Maça em um quadro menor"></li>
+            <li data-text="Manga"><img src="./img/mango.png"  onclick="imgSlider('./img/mango.png');changeBgColor('#ffcc02')" alt="Manga em um quadro menor"></li>
+            <li data-text="Melancia"><img src="./img/watermelon.png" onclick="imgSlider('./img/watermelon.png');changeBgColor('#92ba3c')" alt="Melancia em um quadro menor"></li>
+            <li data-text="Pitaya"><img src="./img/dragonFruits.png" onclick="imgSlider('./img/dragonFruits.png');changeBgColor('#fb6cb2')" alt="Pitaya em um quadro menor"></li>
+            <li data-text="Abacaxi"><img src="./img/pineApple.png" onclick="imgSlider('./img/pineApple.png');changeBgColor('#ffb42b')" alt="Maça em um quadro menor"></li>
         </ul>
         <ul class="sci">
             <li><a href="#"><img src="./img/facebook.png" alt=""></a></li>
@@ -48,6 +49,26 @@
     </section>
 
     <script>
+
+        let menuToggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function(){
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+
+        // troca a imagem pelo click
+        function imgSlider(anything){
+            document.querySelector('.fruits').src = anything;
+        }
+        
+        // troca a cor de fundo
+        function changeBgColor(color){
+            const bg = document.querySelector('.bg');
+            bg.style.background = color;
+        }
+
+
         // adicionar a ativação da class thumb
         let el = document.querySelectorAll('.thumb li');
         for (let i = 0; i < el.length; i++){
